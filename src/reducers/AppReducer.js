@@ -1,3 +1,5 @@
+import { ADD_FEATURE } from "../actions";
+
 export const initialState ={
     additionalPrice: 0,
     car: {
@@ -17,12 +19,16 @@ export const initialState ={
 
 
 export const AppReducer = (state=initialState, action)=>{
+    // console.log('look at this!!!',action,initialState)
     switch(action.type){
-        case 'ADD_FEATURE':
-            return{
-                null:null};
+        case ADD_FEATURE:
+            console.log('hello')
+            return{...state,
+            features:[...state.features, action.payload],
+            store: state.store.filter(item=>!(item.id===action.payload.id))
+            };
         default:
+            console.log('bye!')
             return state
-
     }
 }

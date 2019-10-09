@@ -26,6 +26,7 @@ const mapStateToProps = state => {
   console.log(state)
   return {
       features: state.car.features,
+
   };
 };
 

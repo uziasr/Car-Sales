@@ -10,9 +10,9 @@ const Total = props => {
 };
 
 const mapStateToProps = state => {
-  // the keys of the returned obj will be props passed into the comp
-  console.log(state)
-  return(state)
-};
-
-export default connect(mapStateToProps,{})(Total);
+  return{
+    car: state.car,
+    additionalPrice: state.additionalPrice
+  }
+ }
+ export default connect(mapStateToProps,{})(Total);
