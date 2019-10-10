@@ -10,7 +10,7 @@ const AdditionalFeatures = props => {
       {props.store.length ? (
         <ol type="1">
           {props.store.map(item => (
-            <AdditionalFeature key={item.id} feature={item} addFeatures={addFeatures} />
+            <AdditionalFeature key={item.id} feature={item} addFeatures={props.addFeatures} />
           ))}
         </ol>
       ) : (
